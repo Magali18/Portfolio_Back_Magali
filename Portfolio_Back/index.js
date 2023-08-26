@@ -25,5 +25,9 @@ server.use((err, req, res, next) => {
     res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
     next();
   });
+  server.listen(3001, () => {
+    console.log('%s listening at 3001');
+  });
+
 
   module.exports = server;
