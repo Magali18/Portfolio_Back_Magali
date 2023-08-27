@@ -20,7 +20,10 @@ module.exports = (sequielize) =>{
             defaultValue: DataTypes.NOW,
             allowNull:false
         }
+        
+
     
-    }
+    },
+    { timestamps: false }
     )
 }
