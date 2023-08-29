@@ -1,4 +1,5 @@
-const {Visitante} = require("../models/Visitante");
+const {Visitante} = require("../db");
+
 
 const createVisitController = async (name) => {
     try {
