@@ -1,7 +1,7 @@
 const {DataTypes} = require ('sequelize')
 
-module.exports = (sequielize) =>{
-    sequielize.define(
+module.exports = (sequelize) =>{
+    sequelize.define(
     "Visitante",
     {
         id: {
@@ -15,15 +15,12 @@ module.exports = (sequielize) =>{
             defaultValue:"visitante",
             allowNull: false
         },
-        fecha:{
+        date:{
             type:DataTypes.DATE,
             defaultValue: DataTypes.NOW,
             allowNull:false
         }
-        
-
-    
     },
     { timestamps: false }
     )
-}
+};

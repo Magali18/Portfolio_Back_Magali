@@ -1,11 +1,14 @@
+const {createVisitController} = require('../Controller/createVisit')
 
-
-const postVisit = (req,res)=>{
+const postVisitHandler = async (req,res)=>{
+    const {name} = req.body
 try {
-    res.status(200).json('todo ok')
+    const newVisit = await createVisitController(name)
+
+    res.status(200).json(newVisit)
     
 } catch (error) {
     res.status(400).json({ error: error.message });
 }
 };
-module.exports = postVisit;
+module.exports= postVisitHandler;

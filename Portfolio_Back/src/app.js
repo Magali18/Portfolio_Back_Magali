@@ -9,7 +9,7 @@ const server = express();
 server.use(cookieParser());
 server.use(morgan('dev'));
 server.use(bodyParser.json({ limit: "50mb" }));
-{/*server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));*/}
+server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 server.use((err, req, res, next) => {
     const status = err.status || 500;
     const message = err.message || err;
