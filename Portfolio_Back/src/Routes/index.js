@@ -1,8 +1,8 @@
 const { Router } = require("express");
 const router = Router();
-const postVisit = require ('../Handlers/postVisit')
+const postVisitHandler = require("../Handlers/postVisit");
 
-router.post("/visit",postVisit)
+router.post("/visit",postVisitHandler)
 
 
 module.exports = router;
