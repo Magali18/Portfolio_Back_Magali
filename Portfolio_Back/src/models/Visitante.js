@@ -1,5 +1,6 @@
 const {DataTypes} = require ('sequelize')
 
+
 module.exports = (sequelize) =>{
     sequelize.define(
     "Visitante",
@@ -12,7 +13,7 @@ module.exports = (sequelize) =>{
           },
         name:{
             type: DataTypes.STRING,
-            defaultValue:"visitante",
+            defaultValue:'Visitante',
             allowNull: false
         },
         date:{

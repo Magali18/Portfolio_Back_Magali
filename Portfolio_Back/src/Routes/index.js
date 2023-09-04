@@ -4,7 +4,7 @@ const {postVisitHandler,getAllVisit,getVisitIdHandler } = require("../Handlers/i
 
 router.post("/visit",postVisitHandler)
 router.get('/allVisit', getAllVisit)
-router.get('/visitId',getVisitIdHandler)
+
 
 
 module.exports = router;
