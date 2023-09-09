@@ -4,14 +4,21 @@ const fs = require('fs');
 const path = require('path');
 
 const {
-  DB_USER, DB_PASSWORD, DB_HOST,
+  DB_USER, DB_PASSWORD, DB_HOST,DB_DEPLOY
 } = process.env;
 
-//CONECCIÓN DE SEQUELIZE CON MI BD:
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/porfolio`,
+//-------------CONECCIÓN DE SEQUELIZE CON MI BD_LOCALHOST-------------
+//const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/porfolio`,
+ //{ 
+  //logging: false, 
+ // native: false,
+//}
+//);
+//-----------------------CONECCION BD_DEPLOY_RAILWAY---------------
+const sequelize = new Sequelize(DB_DEPLOY,
  { 
   logging: false, 
-  native: false,
+ native: false,
 }
 );
 
