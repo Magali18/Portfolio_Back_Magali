@@ -2,12 +2,12 @@ const messageWpp = require("../db");
 const axios = require("axios");
 
 const header = {
-    headers: {
-      Authorization: `Bearer EAAE8DpOkrsQBOxL8iCg57gWkHvjCsstBhKyvQtSnwqWyjZA6VuKcAs9M6BBGeu2wwnYOqe2jw7KuiyXQZBsGxbVkZBTkOmIlr07DMZCxGYYGzZC2as5s7nYnVfU4B7G2EFXr2JtVGfpKulQlzCivxLgieE18TFjl78BojidiRGEUMYOajaR37A27d9TLGunjTRaGe5nnSRWVI3yYNyCoL`,
-      Accept: 'application/json, text/plain, */*',
-      'Content-Type': 'application/json',
-    },
-  };
+  headers: {
+    Authorization: `BearerEAAE8DpOkrsQBOxKD6u5ZCjGZA4d5N4Oov8vTb2V025R0i0vJ6ZBW19UIZARLLlZBQSsbS5tN91nA55reFNeWVCsW110es8BzyfmRUO5SLXCOR3h7L99bPlm9lCWpASrbK00YWZCUsyTAecSjh9zzOWc3K9YjjxW30BkQ0ysOIwJCHnLOZC2MIKZB6KxZB`,
+    Accept: 'application/json, text/plain, */*',
+    'Content-Type': 'application/json',
+  },
+};
 
 const postWppController = async (name, number, message) => {
   const data = {
