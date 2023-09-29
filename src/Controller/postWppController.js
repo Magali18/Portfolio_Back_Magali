@@ -13,21 +13,23 @@ const header = {
 
   },
 };
-const tel = 372819103
-const saludo ='Hola ciomo estas' + tel
 
-const postWppController = async (name, number, message) => {
+
+const postWppController = async (text) => {
+console.log('entro al ------> controller')
+console.log('mensaje:' + text)
+const mensajeWpp = ' Porfolio web dice:' + ' ' + text
   const data = {
     messaging_product: "whatsapp",
     to: "543883371406",
     type: "text", 
     text: { 
       preview_url: false, 
-      body:saludo
+      body: mensajeWpp
        
     }
   }
-  console.log('------------------>')
+  console.log('------------------')
 
   try {
     const apiResponse = await axios.post(

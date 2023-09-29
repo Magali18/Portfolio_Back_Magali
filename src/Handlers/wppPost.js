@@ -1,15 +1,17 @@
 const postWppController = require("../Controller/postWppController");
 
 const wppPost = async (req, res) => {
-  console.log("entro al handler");
+  console.log("--------> entro al handler");
 
- 
+  const { text} = req.body;
+console.log('mensaje:' + text)
 
-  const { name, number, messagge } = req.body;
 
   try {
     if (typeof postWppController === "function") {
-      const response = await postWppController(name, number, messagge);
+
+      const response = await postWppController(text);
+
 
       response
         ? res.status(200).json(response)
@@ -18,7 +20,7 @@ const wppPost = async (req, res) => {
       console.log("no es una funcion");
     }
   } catch (error) {
-    res.status(402).json({ message: error.message });
+    res.status(400).json({ message: error.message });
   }
 };
 module.exports = wppPost;
