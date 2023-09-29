@@ -1,20 +1,12 @@
 const postWppController = require("../Controller/postWppController");
 
 const wppPost = async (req, res) => {
-  console.log("--------> entro al handler");
-
   const { text} = req.body;
-console.log('mensaje:' + text)
-
-
   try {
     if (typeof postWppController === "function") {
-
       const response = await postWppController(text);
-
-
       response
-        ? res.status(200).json(response.data)
+        ? res.status(200).json({creado: response})
         : console.log("la data esta vacia");
     } else {
       console.log("no es una funcion");

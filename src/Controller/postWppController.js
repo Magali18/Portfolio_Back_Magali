@@ -15,8 +15,6 @@ const header = {
 
 
 const postWppController = async (text) => {
-console.log('entro al ------> controller')
-console.log('mensaje:' + text)
 const mensajeWpp = ' Porfolio web dice:' + ' ' + text
   const data = {
     messaging_product: "whatsapp",
@@ -28,7 +26,6 @@ const mensajeWpp = ' Porfolio web dice:' + ' ' + text
        
     }
   }
-  console.log('------------------')
 
   try {
     const apiResponse = await axios.post(
@@ -37,7 +34,6 @@ const mensajeWpp = ' Porfolio web dice:' + ' ' + text
       header
     );
 
-    console.log("mensaje enviado", apiResponse.data); 
 
     return apiResponse;
   } catch (error) {
