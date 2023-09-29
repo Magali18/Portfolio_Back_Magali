@@ -14,7 +14,7 @@ console.log('mensaje:' + text)
 
 
       response
-        ? res.status(200).json(response)
+        ? res.status(200).json(response.data)
         : console.log("la data esta vacia");
     } else {
       console.log("no es una funcion");
