@@ -1,8 +1,9 @@
 const postVisitHandler = require ("./postVisit");
 const getAllVisit = require( "./getAllVisit")
-const getVisitIdHandler = require('./getVisitIdHandler')
+const wppPost =require('./wppPost')
+
 module.exports={
     postVisitHandler,
     getAllVisit,
-    getVisitIdHandler 
+    wppPost
 }

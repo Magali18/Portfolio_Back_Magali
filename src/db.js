@@ -8,19 +8,19 @@ const {
 } = process.env;
 
 //-------------CONECCIÓN DE SEQUELIZE CON MI BD_LOCALHOST-------------
-//const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/porfolio`,
- //{ 
-  //logging: false, 
- // native: false,
-//}
-//);
-//-----------------------CONECCION BD_DEPLOY_RAILWAY---------------
-const sequelize = new Sequelize(DB_DEPLOY,
+const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/porfolio`,
  { 
-  logging: false, 
- native: false,
+logging: false, 
+  native: false,
 }
 );
+//-----------------------CONECCION BD_DEPLOY_RAILWAY---------------
+//const sequelize = new Sequelize(DB_DEPLOY,
+ //{ 
+ // logging: false, 
+// native: false,
+//}
+//);
 
 const basename = path.basename(__filename);
 const modelDefiners = [];
@@ -39,7 +39,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 //---------------------------------------------------------------------------------------------------------------------
 
-const {Visitante} = sequelize.models
+const {Visitante,messageWpp} = sequelize.models
 
 module.exports = {
   ...sequelize.models, 
