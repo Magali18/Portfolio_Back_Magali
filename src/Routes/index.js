@@ -3,7 +3,8 @@ const router = Router();
 const {wppPost } = require("../Handlers/index");
 
 
-router.post("/", wppPost)
+router.post("/postWpp", wppPost)
+
 router.get('/hola',(req, res)=>{
     res.status(200).send('Hola esta deployado')
 })
