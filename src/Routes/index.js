@@ -9,9 +9,6 @@ router.get('/',(req, res)=>{
     res.status(200).send('Hola esta deployado')
 })
 
-router.get('/hola',(req, res)=>{
-    res.status(200).send('Hola esta es la ruta de prueba')
-})
 
 
 
