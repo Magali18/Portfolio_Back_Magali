@@ -15,7 +15,9 @@ const header = {
 
 
 const postWppController = async (text) => {
+  console.log(text)
 const mensajeWpp = ' Porfolio web dice:' + ' ' + text
+
   const data = {
     messaging_product: "whatsapp",
     to: "543883371406",
@@ -28,18 +30,19 @@ const mensajeWpp = ' Porfolio web dice:' + ' ' + text
   }
 
   try {
-    const apiResponse = await axios.post(
-      "https://graph.facebook.com/v17.0/132405959956444/messages",
+    const apiResponse = await axios.post(" https://graph.facebook.com/v17.0/132405959956444/messages",
       data,
       header
     );
 
-
+    console.log("mensaje enviado", apiResponse.data); 
     return apiResponse;
   } catch (error) {
     console.error(error);
     throw error;
   }
+
 };
+  
 
 module.exports = postWppController;
