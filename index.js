@@ -1,13 +1,21 @@
-const server = require('./src/app') 
-const { conn } = require('./src/db.js');
-const port = process.env.PORT
 
-conn.sync({ force: false })
-  .then(() => {
-    server.listen(port, () => {
-      console.log(`%s listening at ${port}`);
-    });
-  })
-  .catch((error) => {
-    console.error('Error syncing database:', error);
-  });
+const express = require('express');
+const http = require('http');
+const socketIO = require('socket.io');
+
+const app = express();
+const server = http.createServer(app);
+const io = socketIO(server,{
+  cors:{origin:'*'}
+});
+io.on('connection',(socket)=>{
+  console.log('Se ha conectado un cliente')
+})
+
+server.listen(3000, () => {
+  console.log('Servidor escuchando en el puerto 3000');
+});
+
+
+
+
